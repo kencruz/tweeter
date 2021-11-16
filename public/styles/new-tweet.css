@@ -25,3 +25,7 @@ section.new-tweet form div button {
   background: #f4f1ec;
   margin-bottom: 0.5em;
 }
+
+.red {
+  color: red;
+}
