@@ -1,4 +1,6 @@
 nav {
+  position: absolute;
+  top: 0;
   height: 120px;
   width: 100%;
   background-color: #4056A1;
@@ -13,4 +15,8 @@ nav .action {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.cta {
+  color: #ef3c1e;
 }
