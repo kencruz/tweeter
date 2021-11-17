@@ -49,7 +49,14 @@ $(document).ready(() => {
 
   $("form").submit(function () {
     event.preventDefault();
+
     const tweetContent = $(this).serialize();
+    const tweetCharacterCount = tweetContent.split("text=")[1].length;
+
+    if (tweetCharacterCount < 1 || tweetCharacterCount > 140) {
+      alert("Tweet should be between 1 and 140 characters.");
+      return;
+    }
 
     $.ajax({
       type: "POST",
@@ -60,6 +67,7 @@ $(document).ready(() => {
         loadTweets();
       },
     });
+    this.reset();
   });
 
   loadTweets();
