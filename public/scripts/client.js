@@ -48,6 +48,7 @@ $(document).ready(() => {
   };
 
   $("form").submit(function () {
+    const that = this;
     event.preventDefault();
 
     const tweetContent = $(this).serialize();
@@ -64,7 +65,10 @@ $(document).ready(() => {
       data: tweetContent,
       success: function (done) {
         console.log("tweet sent");
-        loadTweets();
+        $.ajax("/tweets", { method: "GET" }).then(function (tweets) {
+          const tweetElement = createTweetElement(tweets[tweets.length - 1]);
+          $(tweetElement).insertAfter(that);
+        });
       },
     });
     this.reset();
