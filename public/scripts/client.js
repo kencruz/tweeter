@@ -81,7 +81,7 @@ $(document).ready(() => {
         console.log('tweet sent');
         $.ajax('/tweets', { method: 'GET' }).then(function(tweets) {
           const tweetElement = createTweetElement(tweets[tweets.length - 1]);
-          $(tweetElement).insertAfter(that);
+          $(tweetElement).insertAfter($(that).parent());
         });
       },
     });
