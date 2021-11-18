@@ -5,8 +5,8 @@
  */
 $(document).ready(() => {
   const renderTweets = function(tweets) {
-    // loops through tweets
-    for (const tweet of tweets) {
+    // loops through tweets in reverse chronological order
+    for (const tweet of tweets.reverse()) {
       // calls createTweetElement for each tweet
       const renderedTweet = createTweetElement(tweet);
       // takes return value and appends it to the tweets container
@@ -52,6 +52,12 @@ $(document).ready(() => {
       renderTweets(tweets);
     });
   };
+
+  $('.action').on('click', function() {
+    console.log('new tweet');
+    $('.new-tweet').slideDown();
+    $('#tweet-text').focus();
+  });
 
   $('form').submit(function() {
     event.preventDefault();
