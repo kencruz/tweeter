@@ -23,7 +23,7 @@ nav .action {
 }
 
 .hidden {
-  visibility: hidden;
+  display: none;
 }
 
 #scroll-up {
@@ -37,11 +37,10 @@ nav .action {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.25s ease-in;
+  transition: transform 0.4s cubic-bezier(0.47, 1.64, 0.41, 0.8);
   cursor: pointer;
 }
 
 #scroll-up:hover {
-  width: 90px;
-  height: 90px;
+  transform: scale(0.8) translateY(10px);
 }

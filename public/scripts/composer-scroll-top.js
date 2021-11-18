@@ -3,9 +3,9 @@ $(document).ready(function() {
     const height = $(this).scrollTop();
 
     if (height > 500) {
-      $('#scroll-up').removeClass('hidden');
+      $('#scroll-up').fadeIn();
     } else {
-      $('#scroll-up').addClass('hidden');
+      $('#scroll-up').fadeOut();
     }
   });
 
