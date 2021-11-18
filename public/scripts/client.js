@@ -14,6 +14,12 @@ $(document).ready(() => {
     }
   };
 
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   const createTweetElement = (data) => {
     return $(`<article class="tweet">
                 <header>
@@ -25,7 +31,7 @@ $(document).ready(() => {
                   <span class="username">${data.user.handle}</span>
                 </header>
                 <p class="content">
-                  ${data.content.text}
+                  ${escape(data.content.text)}
                 </p>
                 <footer>
                   <span class="date-ago">
