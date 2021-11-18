@@ -54,17 +54,25 @@ $(document).ready(() => {
   };
 
   $("form").submit(function () {
-    const that = this;
     event.preventDefault();
 
     const tweetContent = $(this).serialize();
     const tweetCharacterCount = tweetContent.split("text=")[1].length;
 
     if (tweetCharacterCount < 1 || tweetCharacterCount > 140) {
-      alert("Tweet should be between 1 and 140 characters.");
+      $(this).prev().addClass(["visible", "error"]);
+      $(this)
+        .prev()
+        .html(
+          "<i class='fas fa-exclamation-triangle'></i>Tweet should be between 1 and 140 characters.<i class='fas fa-exclamation-triangle'></i>"
+        );
       return;
     }
 
+    // hide the dialog box if it was shown
+    $(this).prev().removeClass(["visible", "error"]);
+    // save context to use in the nested ajax request
+    const that = this;
     $.ajax({
       type: "POST",
       url: "/tweets",
