@@ -20,22 +20,22 @@ $(document).ready(() => {
     return div.innerHTML;
   };
 
-  const createTweetElement = (data) => {
+  const createTweetElement = ({ user, content, created_at }) => {
     return $(`<article class="tweet">
                 <header>
                   <div class="profile">
-                    <img src="${data.user.avatars}" /><span class="name"
-                      >${data.user.name}</span
+                    <img src="${user.avatars}" /><span class="name"
+                      >${user.name}</span
                     >
                   </div>
-                  <span class="username">${data.user.handle}</span>
+                  <span class="username">${user.handle}</span>
                 </header>
                 <p class="content">
-                  ${escape(data.content.text)}
+                  ${escape(content.text)}
                 </p>
                 <footer>
                   <span class="date-ago">
-                    ${timeago.format(data.created_at)}
+                    ${timeago.format(created_at)}
                   </span>
                   <div class="actions">
                     <a href=""><i class="fas fa-flag"></i></a>
