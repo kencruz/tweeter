@@ -4,18 +4,18 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 $(document).ready(() => {
-  const renderTweets = function (tweets) {
+  const renderTweets = function(tweets) {
     // loops through tweets
     for (const tweet of tweets) {
       // calls createTweetElement for each tweet
       const renderedTweet = createTweetElement(tweet);
       // takes return value and appends it to the tweets container
-      $(".container").append(renderedTweet);
+      $('.container').append(renderedTweet);
     }
   };
 
-  const escape = function (str) {
-    let div = document.createElement("div");
+  const escape = function(str) {
+    let div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
@@ -48,38 +48,38 @@ $(document).ready(() => {
   };
 
   const loadTweets = () => {
-    return $.ajax("/tweets", { method: "GET" }).then(function (tweets) {
+    return $.ajax('/tweets', { method: 'GET' }).then(function(tweets) {
       renderTweets(tweets);
     });
   };
 
-  $("form").submit(function () {
+  $('form').submit(function() {
     event.preventDefault();
 
     const tweetContent = $(this).serialize();
-    const tweetCharacterCount = tweetContent.split("text=")[1].length;
+    const tweetCharacterCount = tweetContent.split('text=')[1].length;
 
     if (tweetCharacterCount < 1 || tweetCharacterCount > 140) {
-      $(this).prev().addClass(["visible", "error"]);
+      $(this).prev().addClass(['visible', 'error']);
       $(this)
         .prev()
         .html(
-          "<i class='fas fa-exclamation-triangle'></i>Tweet should be between 1 and 140 characters.<i class='fas fa-exclamation-triangle'></i>"
+          '<i class="fas fa-exclamation-triangle"></i>Tweet should be between 1 and 140 characters.<i class="fas fa-exclamation-triangle"></i>'
         );
       return;
     }
 
     // hide the dialog box if it was shown
-    $(this).prev().removeClass(["visible", "error"]);
+    $(this).prev().removeClass(['visible', 'error']);
     // save context to use in the nested ajax request
     const that = this;
     $.ajax({
-      type: "POST",
-      url: "/tweets",
+      type: 'POST',
+      url: '/tweets',
       data: tweetContent,
-      success: function (done) {
-        console.log("tweet sent");
-        $.ajax("/tweets", { method: "GET" }).then(function (tweets) {
+      success: function(done) {
+        console.log('tweet sent');
+        $.ajax('/tweets', { method: 'GET' }).then(function(tweets) {
           const tweetElement = createTweetElement(tweets[tweets.length - 1]);
           $(tweetElement).insertAfter(that);
         });
