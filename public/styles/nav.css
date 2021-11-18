@@ -21,3 +21,27 @@ nav .action {
 .cta {
   color: #ef3c1e;
 }
+
+.hidden {
+  visibility: hidden;
+}
+
+#scroll-up {
+  position: fixed;
+  background: red;
+  bottom: 1em;
+  right: 1em;
+  height: 100px;
+  border-radius: 50%;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease-in;
+  cursor: pointer;
+}
+
+#scroll-up:hover {
+  width: 90px;
+  height: 90px;
+}
