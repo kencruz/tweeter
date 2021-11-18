@@ -11,6 +11,11 @@ nav {
   align-items: center;
 }
 
+nav.nav-anchor {
+  position: absolute;
+  top: 400px;
+}
+
 nav .action {
   display: flex;
   cursor: pointer;
