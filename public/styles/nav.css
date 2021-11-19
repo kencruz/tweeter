@@ -15,7 +15,7 @@ nav.nav-anchor {
   top: 400px;
 }
 
-nav .action {
+nav #write-a-tweet {
   display: flex;
   cursor: pointer;
   font-size: 0.8em;
