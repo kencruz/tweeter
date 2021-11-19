@@ -47,7 +47,13 @@ main {
     margin-top: 205px;
     margin-left: auto;
     margin-right: auto;
+    height: 400px;
     max-width: 600px;
+    justify-content: initial;
+  }
+
+  nav {
+    background-color: #4056a1;
   }
 
   main {
