@@ -1,6 +1,8 @@
 $(document).ready(function() {
+  $('#scroll-up').css('display', 'flex').hide();
   $(window).on('scroll', function() {
     const height = $(this).scrollTop();
+    console.log(height);
 
     if (height > 399) {
       $('nav').addClass('nav-anchor');
@@ -16,7 +18,11 @@ $(document).ready(function() {
   });
 
   $('#scroll-up').on('click', function() {
-    $(window).scrollTop(400);
+    if ($(document).width() > 1023) {
+      $(window).scrollTop(0);
+    } else {
+      $(window).scrollTop(400);
+    }
     $('.new-tweet').slideDown();
     $('#tweet-text').focus();
   });

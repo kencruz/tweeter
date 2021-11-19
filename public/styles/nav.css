@@ -19,16 +19,13 @@ nav.nav-anchor {
 nav .action {
   display: flex;
   cursor: pointer;
+  font-size: 0.8em;
   flex-direction: column;
   align-items: center;
 }
 
 .cta {
   color: #ef3c1e;
-}
-
-.hidden {
-  display: none;
 }
 
 #scroll-up {
@@ -48,4 +45,8 @@ nav .action {
 
 #scroll-up:hover {
   transform: scale(0.8) translateY(10px);
+}
+
+#scroll-up.hidden {
+  display: none;
 }

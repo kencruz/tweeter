@@ -54,6 +54,11 @@ $(document).ready(() => {
   };
 
   $('.action').on('click', function() {
+    if ($(document).width() > 1023) {
+      $(window).scrollTop(0);
+    } else {
+      $(window).scrollTop(400);
+    }
     console.log('new tweet');
     $('.new-tweet').slideDown();
     $('#tweet-text').focus();

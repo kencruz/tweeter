@@ -6,7 +6,9 @@
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -18,13 +20,12 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 nav span {
-  font-family: 'Bungee', sans-serif;
+  font-family: "Bungee", sans-serif;
 }
-
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
@@ -33,4 +34,40 @@ nav span {
 main {
   width: 90%;
   margin: 0 auto;
+}
+
+@media only screen and (min-width: 1024px) {
+  body {
+    display: flex;
+    gap: 2em;
+    justify-content: center;
+  }
+
+  body > header {
+    margin-top: 205px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 600px;
+  }
+
+  main {
+    margin-top: 120px;
+    max-width: 900px;
+  }
+
+  #dialog {
+    font-size: 0.8em;
+  }
+  /*header {
+    width: 33.3%;
+    float: left;
+  }
+
+  main {
+    width: 66.7%;
+    margin: 0 1.5em;
+    float: right;
+    padding: 3em;
+  }
+  */
 }
