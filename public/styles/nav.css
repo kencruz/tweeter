@@ -1,3 +1,6 @@
+/*
+ * Styling for the nav bar, fixed to the top of the viewport
+ */
 nav {
   position: fixed;
   top: 0;
@@ -10,11 +13,17 @@ nav {
   align-items: center;
 }
 
+/*
+ * Nav bar will stop from sticking to the top of the viewport using jquery
+ */
 nav.nav-anchor {
   position: absolute;
   top: 400px;
 }
 
+/*
+ * Styling for the write-a-tweet button
+ */
 nav #write-a-tweet {
   display: flex;
   cursor: pointer;
@@ -23,29 +32,42 @@ nav #write-a-tweet {
   align-items: center;
 }
 
+/*
+ * Colour for the call to action
+ */
 .cta {
   color: #ef3c1e;
 }
 
+/*
+ * Styling for the scroll-up button
+ */
 #scroll-up {
   position: fixed;
   background: red;
   bottom: 1em;
   right: 1em;
-  height: 100px;
+  height: 80px;
   border-radius: 50%;
-  width: 100px;
+  width: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.4s cubic-bezier(0.47, 1.64, 0.41, 0.8);
   cursor: pointer;
+  /* Creates a nice bouncy animation */
+  transition: transform 0.4s cubic-bezier(0.47, 1.64, 0.41, 0.8);
 }
 
+/*
+ * Will shrink and lower a bit when hovered.
+ */
 #scroll-up:hover {
   transform: scale(0.8) translateY(10px);
 }
 
+/*
+ * Hide the scroll-up button on page load
+ */
 #scroll-up.hidden {
   display: none;
 }

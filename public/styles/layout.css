@@ -36,6 +36,10 @@ main {
   margin: 0 auto;
 }
 
+/*
+ * Layout rules for larger than tablet sizes
+ */
+
 @media only screen and (min-width: 1024px) {
   body {
     display: flex;
@@ -64,16 +68,4 @@ main {
   #dialog {
     font-size: 0.8em;
   }
-  /*header {
-    width: 33.3%;
-    float: left;
-  }
-
-  main {
-    width: 66.7%;
-    margin: 0 1.5em;
-    float: right;
-    padding: 3em;
-  }
-  */
 }

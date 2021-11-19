@@ -1,3 +1,7 @@
+/*
+ * Styling for a single tweet
+ */
+
 article.tweet {
   border: 4px solid;
   padding: 1em;
@@ -26,6 +30,7 @@ article.tweet header {
 article.tweet .profile {
   display: flex;
   align-items: center;
+  gap: 0.5em;
 }
 
 article.tweet .content {

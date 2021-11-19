@@ -1,3 +1,6 @@
+/*
+ * Styling for the new tweet posting form
+ */
 section.new-tweet {
   display: none;
 }
@@ -20,6 +23,9 @@ section.new-tweet form div button {
   padding: 5px;
 }
 
+/*
+ * Styling for the new tweet input field
+ */
 #tweet-text {
   resize: none;
   border-top: none;
@@ -30,10 +36,17 @@ section.new-tweet form div button {
   margin-bottom: 0.5em;
 }
 
+/*
+ * This is for the tweet counter when over the character limit, keeps
+ * css handling out of jQuery
+ */
 .red {
   color: red;
 }
 
+/*
+ * Styling for the error dialog box above the tweet posting form
+ */
 #dialog {
   border: 4px solid;
   padding: 0.5em;
