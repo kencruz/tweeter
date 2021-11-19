@@ -6,9 +6,9 @@ Built with jQuery, Node, and Express.
 
 ## Final Product
 
-!["Screenshot of Desktop layout"](https://github.com/kencruz/tinyapp/blob/master/docs/desktop.png)
+!["Screenshot of Desktop layout"](https://github.com/kencruz/tweeter/blob/master/docs/desktop.png)
 
-!["Screenshot of Mobile layout"](https://github.com/kencruz/tinyapp/blob/master/docs/mobile.png)
+!["Screenshot of Mobile layout"](https://github.com/kencruz/tweeter/blob/master/docs/mobile.png)
 
 ## Getting Started
 
